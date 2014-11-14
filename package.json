@@ -1,9 +1,26 @@
 {
-  "name": "ExpressApp",
+  "name": "Calc2",
   "version": "0.0.1",
-  "description": "A Node.js App using express",
+  "description": "",
+  "private": "true",
+  "main": "app.js",
   "dependencies": {
-	"express": "~4.0.0"
-   },
-  "engine": "node >=0.6.x"
+    "body-parser": "^1.9.2",
+    "fs": "^0.0.2",
+    "express": "^4.10.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PavelPodviaznikov/Calc2.git"
+  },
+  "author": "Pavel Podviaznikov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PavelPodviaznikov/Calc2/issues"
+  },
+  "homepage": "https://github.com/PavelPodviaznikov/Calc2"
 }
