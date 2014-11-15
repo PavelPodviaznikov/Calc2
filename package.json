@@ -1,26 +1,26 @@
 {
-  "name": "Calc2",
-  "version": "0.0.1",
-  "description": "",
-  "private": "true",
-  "main": "app.js",
+  "name": "node-js-test",
+  "version": "0.1.2",
+  "description": "A sample Node.js app using Express 4",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
   "dependencies": {
     "body-parser": "^1.9.2",
-    "fs": "^0.0.2",
-    "express": "^4.10.2"
+    "express": "~4.9.x"
   },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "engines": {
+    "node": "0.10.x"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/PavelPodviaznikov/Calc2.git"
+    "url": "https://github.com/PavelPodviaznikov/Calc2"
   },
-  "author": "Pavel Podviaznikov",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/PavelPodviaznikov/Calc2/issues"
-  },
-  "homepage": "https://github.com/PavelPodviaznikov/Calc2"
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "license": "MIT"
 }
