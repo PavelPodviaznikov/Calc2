@@ -31,19 +31,7 @@ app.post('/', function (req, res) {
 	var a = req.body.a;
 	var b = req.body.b;
 	var operator = req.body.operator;
-	var html = '<form action="/" method="post">'+
-					'a: '+
-					'<input type="text" name="a">'+
-					'<br>'+
-					'b: '+
-					'<input type="text" name="b">'+
-					'<br>'+
-					'operator: '+
-					'<input type="text" name="operator">'+
-					'<br>'+
-					'<button type="submit">Calculate</button>'+
-				'</form>'+
-				'ANSWER = '+calculator(parseInt(a),parseInt(b),operator);
+	var html = 'ANSWER = '+calculator(parseInt(a),parseInt(b),operator);
 	res.send(html);
 });
 app.listen(app.get('port'), function() {
