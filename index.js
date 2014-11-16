@@ -38,8 +38,8 @@ app.get('/calc2', function (req, res) {
 				 "<a href='/'>Main</a>";
 	res.send(html);
 });
-app.get('/calc3.html', function (req, res) {
-	res.send("calc3.html");
+app.get('/calc3.html', function (request, response) {
+	response.send("calc3.html");
 });
 app.get('/answer', function (request, response) {
 
