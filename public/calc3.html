@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>NodeJS Calculators</title>
+	<script src="http://code.jquery.com/jquery.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#calculate').on('click', function(){
+			var a = $('#a').val();
+			var b = $('#b').val();
+			var operator = $('#operator').val();
+			var url = '/answer?a='+a+'&b='+b+'&operator='+operator;
+			$.get(url, function(){
+				$(location).attr('href', url);
+			});
+		})
+	});
+</script>
+	a: <input type="text" id="a">
+	b: <input type="text" id="b">
+	operator: <input type="text" id="operator">
+	<input type="button" id="calculate" value="Calculate">
+</body>
+</html>

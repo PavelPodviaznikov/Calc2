@@ -5,12 +5,12 @@ var app = express();
 app.set('port', (process.env.PORT || 5000))
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser());
-app.get('/', function(request, response) {
+/*app.get('/', function(request, response) {
   var html = "<a href='/calc1'>Calc1</a>"+
   			 "<br>"+
   			 "<a href='/calc2'>Calc2</a>";
   response.send(html);
-});
+});*/
 app.get('/calc1', function(request, response) {
   var a=parseInt(request.param('a'));
   var b=parseInt(request.param('b'));
@@ -37,6 +37,9 @@ app.get('/calc2', function (req, res) {
 				'</form>'+
 				 "<a href='/'>Main</a>";
 	res.send(html);
+});
+app.get('/calc3.html', function (req, res) {
+	res.send("calc3.html");
 });
 app.get('/answer', function (request, response) {
 
