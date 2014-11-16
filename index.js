@@ -1,9 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
-var par1;
-var par2;
-var oper;
 
 app.set('port', (process.env.PORT || 5000))
 app.use(express.static(__dirname + '/public'));
@@ -16,7 +13,7 @@ app.get('/calc1', function(request, response) {
   response.send(answer);
 });
 app.get('/calc2', function (req, res) {
-	var html = '<form action="/" method="get">'+
+	var html = '<form action="/answer" method="get">'+
 					'a: '+
 					'<input type="text" name="a">'+
 					'<br>'+
@@ -30,20 +27,13 @@ app.get('/calc2', function (req, res) {
 				'</form>';
 	res.send(html);
 });
-app.get('/?a=5&b=10&operator=plus', function (request, response) {
-	/*
-	var a = request.body.a;
-	var b = request.body.b;
-	var operator = request.body.operator;
-	var html = 'ANSWER = '+calculator(parseInt(a),parseInt(b),operator);
-	response.send(html);
-	*/
-	
-	var a=parseInt(request.param('a'));
-	var b=parseInt(request.param('b'));
-	var operator=request.param('operator');
-	var answer = "Answer is "+calculator(a,b,operator);
-	response.send(answer);
+app.get('/answer', function (request, response) {
+
+  var a=parseInt(request.param('a'));
+  var b=parseInt(request.param('b'));
+  var operator=request.param('operator');
+  var answer = "Answer is "+calculator(a,b,operator);
+  response.send(answer);
 	
 });
 app.listen(app.get('port'), function() {
