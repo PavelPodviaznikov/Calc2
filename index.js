@@ -27,7 +27,7 @@ app.get('/calc2', function (req, res) {
 				'</form>';
 	res.send(html);
 });
-app.post('/', function (request, response) {
+app.post('/calc2', function (request, response) {
 	/*
 	var a = req.body.a;
 	var b = req.body.b;
