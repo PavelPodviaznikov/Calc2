@@ -34,7 +34,8 @@ app.get('/calc2', function (req, res) {
 					'<input type="text" name="operator">'+
 					'<br>'+
 					'<button type="submit">Calculate</button>'+
-				'</form>';
+				'</form>'+
+				 "<a href='/'>Main</a>";
 	res.send(html);
 });
 app.get('/answer', function (request, response) {
