@@ -1,6 +1,9 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
+var par1;
+var par2;
+var oper;
 
 app.set('port', (process.env.PORT || 5000))
 app.use(express.static(__dirname + '/public'));
@@ -27,19 +30,21 @@ app.get('/calc2', function (req, res) {
 				'</form>';
 	res.send(html);
 });
-app.post('/', function (request, response) {
-	var a = request.param("a");
-	var b = request.param("b");
-	var operator = request.param("operator");
+app.get('/?a=5&b=10&operator=plus', function (request, response) {
+	/*
+	var a = request.body.a;
+	var b = request.body.b;
+	var operator = request.body.operator;
 	var html = 'ANSWER = '+calculator(parseInt(a),parseInt(b),operator);
 	response.send(html);
-	/*
+	*/
+	
 	var a=parseInt(request.param('a'));
 	var b=parseInt(request.param('b'));
 	var operator=request.param('operator');
 	var answer = "Answer is "+calculator(a,b,operator);
 	response.send(answer);
-	*/
+	
 });
 app.listen(app.get('port'), function() {
   console.log("Node app is running at localhost:" + app.get('port'))
