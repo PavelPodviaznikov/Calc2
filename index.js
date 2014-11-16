@@ -13,7 +13,7 @@ app.get('/calc1', function(request, response) {
   response.send(answer);
 });
 app.get('/calc2', function (req, res) {
-	var html = '<form action="/" method="post">'+
+	var html = '<form action="/" method="get">'+
 					'a: '+
 					'<input type="text" name="a">'+
 					'<br>'+
