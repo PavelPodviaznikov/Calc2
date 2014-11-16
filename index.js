@@ -27,12 +27,19 @@ app.get('/calc2', function (req, res) {
 				'</form>';
 	res.send(html);
 });
-app.post('/', function (req, res) {
+app.post('/', function (request, response) {
+	/*
 	var a = req.body.a;
 	var b = req.body.b;
 	var operator = req.body.operator;
 	var html = 'ANSWER = '+calculator(parseInt(a),parseInt(b),operator);
 	res.send(html);
+	*/
+	var a=parseInt(request.param('a'));
+	var b=parseInt(request.param('b'));
+	var operator=request.param('operator');
+	var answer = "Answer is "+calculator(a,b,operator);
+	response.send(answer);
 });
 app.listen(app.get('port'), function() {
   console.log("Node app is running at localhost:" + app.get('port'))
