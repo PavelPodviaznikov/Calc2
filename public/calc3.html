@@ -12,8 +12,8 @@
 			var b = $('#b').val();
 			var operator = $('#operator').val();
 			var url = '/answer?a='+a+'&b='+b+'&operator='+operator;
-			$.get(url, function(){
-				$(location).attr('href', url);
+			$.get(url, function(data){
+				$('body').append(data);
 			});
 		})
 	});

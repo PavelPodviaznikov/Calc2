@@ -22,8 +22,12 @@ app.get('/calc1', function(request, response) {
 
   response.send(html);
 });
-app.get('/calc2', function (req, res) {
-	var html = '<form action="/answer" method="get">'+
+app.get('/calc2', function (request, response) {
+	var a=parseInt(request.param('a'));
+	var b=parseInt(request.param('b'));
+	var operator=request.param('operator');
+	var answer = "Answer is "+calculator(a,b,operator);
+	var html = '<form action="/calc2" method="get">'+
 					'a: '+
 					'<input type="text" name="a">'+
 					'<br>'+
@@ -35,8 +39,9 @@ app.get('/calc2', function (req, res) {
 					'<br>'+
 					'<button type="submit">Calculate</button>'+
 				'</form>'+
+				'<p>'+answer+'</p>'+
 				 "<a href='/'>Main</a>";
-	res.send(html);
+	response.send(html);
 });
 app.get('/calc3.html', function (request, response) {
 	response.send("calc3.html");
@@ -47,9 +52,7 @@ app.get('/answer', function (request, response) {
   var b=parseInt(request.param('b'));
   var operator=request.param('operator');
   var answer = "Answer is "+calculator(a,b,operator);
-  var html = "<p>"+answer+"</p>"+
-  			 "<br>"+	 
-  			 "<a href='/'>Main</a>";
+  var html = "<p>"+answer+"</p>";
   response.send(html);
 	
 });
