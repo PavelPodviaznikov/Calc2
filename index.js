@@ -46,6 +46,47 @@ app.get('/calc2', function (request, response) {
 app.get('/calc3.html', function (request, response) {
 	response.send("calc3.html");
 });
+app.get('/calc4', function (request, response) {
+	var html = '<a href="/calc4/divide">Divide</a>'+
+				'<br>'+
+				'<a href="/calc4/multiply">Multiply</a>'+
+				'<br>'+
+				'<a href="/calc4/add">Add</a>'+
+				'<br>'+
+				'<a href="/calc4/sub">Sub</a>';
+				
+	response.send(html);
+});
+
+app.get('/calc4/divide', function (request, response) {
+  var a=parseInt(request.param('a'));
+  var b=parseInt(request.param('b'));
+  var answer = "Answer is "+(a/b);
+  var html = "<p>"+answer+"</p>";
+  response.send(html);
+});
+app.get('/calc4/multiply', function (request, response) {
+  var a=parseInt(request.param('a'));
+  var b=parseInt(request.param('b'));
+  var answer = "Answer is "+(a*b);
+  var html = "<p>"+answer+"</p>";
+  response.send(html);
+});
+app.get('/calc4/add', function (request, response) {
+  var a=parseInt(request.param('a'));
+  var b=parseInt(request.param('b'));
+  var answer = "Answer is "+(a+b);
+  var html = "<p>"+answer+"</p>";
+  response.send(html);
+});
+app.get('/calc4/sub', function (request, response) {
+  var a=parseInt(request.param('a'));
+  var b=parseInt(request.param('b'));
+  var answer = "Answer is "+(a-b);
+  var html = "<p>"+answer+"</p>";
+  response.send(html);
+});
+
 app.get('/answer', function (request, response) {
 
   var a=parseInt(request.param('a'));
@@ -56,6 +97,7 @@ app.get('/answer', function (request, response) {
   response.send(html);
 	
 });
+
 app.listen(app.get('port'), function() {
   console.log("Node app is running at localhost:" + app.get('port'))
 })
