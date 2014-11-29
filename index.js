@@ -11,6 +11,9 @@ app.use(bodyParser());
   			 "<a href='/calc2'>Calc2</a>";
   response.send(html);
 });*/
+
+//add MODULO 24%5 = 4
+
 app.get('/calc1', function(request, response) {
   var a=parseInt(request.param('a'));
   var b=parseInt(request.param('b'));
@@ -53,8 +56,9 @@ app.get('/calc4', function (request, response) {
 				'<br>'+
 				'<a href="/calc4/add">Add</a>'+
 				'<br>'+
-				'<a href="/calc4/sub">Sub</a>';
-				
+				'<a href="/calc4/sub">Sub</a>'+
+				'<br>'+
+				'<a href="/calc4/mod">Mod</a>';
 	response.send(html);
 });
 
@@ -86,6 +90,13 @@ app.get('/calc4/sub', function (request, response) {
   var html = "<p>"+answer+"</p>";
   response.send(html);
 });
+app.get('/calc4/mod', function (request, response) {
+  var a=parseInt(request.param('a'));
+  var b=parseInt(request.param('b'));
+  var answer = "Answer is "+(a%b);
+  var html = "<p>"+answer+"</p>";
+  response.send(html);
+});
 
 app.get('/answer', function (request, response) {
 
@@ -114,5 +125,8 @@ function calculator(x, y, oper){
 	}
 	else if(oper==="divide"){
 		return x/y;
+	}
+	else if(oper==="modulo"){
+		return x%y;
 	}
 }
