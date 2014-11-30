@@ -5,13 +5,6 @@ var app = express();
 app.set('port', (process.env.PORT || 5000))
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser());
-/*app.get('/', function(request, response) {
-  var html = "<a href='/calc1'>Calc1</a>"+
-  			 "<br>"+
-  			 "<a href='/calc2'>Calc2</a>";
-  response.send(html);
-});*/
-
 
 app.get('/calc1', function(request, response) {
   var a=parseInt(request.param('a'));
