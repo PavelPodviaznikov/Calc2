@@ -12,7 +12,6 @@ app.use(bodyParser());
   response.send(html);
 });*/
 
-//add MODULO 24%5 = 4
 
 app.get('/calc1', function(request, response) {
   var a=parseInt(request.param('a'));
