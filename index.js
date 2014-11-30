@@ -17,6 +17,7 @@ app.get('/calc1', function(request, response) {
 
   response.send(html);
 });
+
 app.get('/calc2', function (request, response) {
 	var a=parseInt(request.param('a'));
 	var b=parseInt(request.param('b'));
